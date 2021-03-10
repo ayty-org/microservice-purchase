@@ -31,20 +31,16 @@ public class Purchase implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name="specific_id_user")
     private String specificIdUserLibrary;
 
-    @Column(name = "specific_id_books")
     private String specificIdBooks;
 
-    @Column(name = "price_to_pay")
     private double priceToPay;
 
-    @Column(name="purchase_completed")
     private boolean purchaseCompleted;
 
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String specificID = UUID.randomUUID().toString();
+    private String specificID;
 
     public static Purchase to(PurchaseSaveDTO purchaseDTO, String specificIdBooks) {
         return Purchase

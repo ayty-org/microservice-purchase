@@ -33,6 +33,6 @@ public class PurchaseSaveDTO implements Serializable {
     @NotNull
     private boolean purchaseCompleted;
 
-    private String specificID = UUID.randomUUID().toString();
+    private String specificID;
 
 }

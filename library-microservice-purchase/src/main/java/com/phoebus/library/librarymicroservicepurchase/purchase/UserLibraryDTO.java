@@ -17,9 +17,6 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder(builderClassName = "Builder")
 public class UserLibraryDTO {
-    private static final long serialVersionUID = 1L;
-
-    private Long id;
     @NotNull
     @Size(min = 2)
     private String name;
@@ -36,5 +33,5 @@ public class UserLibraryDTO {
     @Size(max = 1)
     private String gender;
     @NotNull
-    private String specificID = UUID.randomUUID().toString();
+    private String specificID;
 }

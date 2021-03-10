@@ -6,9 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
-
 
 @Getter
 @Setter
@@ -16,9 +13,5 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @Builder(builderClassName = "Builder")
 public class CategoryOfBookDTO {
-    private static final long serialVersionUID = 1L;
-    private Long id;
-    @NotEmpty
-    @Size(min = 2)
     private String name;
 }

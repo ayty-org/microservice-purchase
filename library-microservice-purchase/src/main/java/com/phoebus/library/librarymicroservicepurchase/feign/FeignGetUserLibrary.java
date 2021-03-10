@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(contextId = "GetUser", url = "http://localhost:9092/v1/user", name = "userLibrary-service")
-public interface GetUserLibrary {
+public interface FeignGetUserLibrary {
     @GetMapping(value = "/id/{specificID}")
     UserLibraryDTO findSpecificID(@PathVariable(value = "specificID") String specificID);
 
