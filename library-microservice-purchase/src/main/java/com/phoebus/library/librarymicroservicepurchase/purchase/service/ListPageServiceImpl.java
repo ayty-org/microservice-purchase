@@ -21,7 +21,7 @@ public class ListPageServiceImpl implements ListPageService{
 
     @Override
     public Page<PurchaseReturnDTO> listPagePurchase(Pageable pageable) {
-        List<PurchaseReturnDTO> purchaseReturnDTOList = returnAllPurchases.findAllPurchase(feignGetBook, feignGetUserLibrary);
+        List<PurchaseReturnDTO> purchaseReturnDTOList = returnAllPurchases.findAllPurchase();
         int start = (int) pageable.getOffset();
         int end = Math.min((start + pageable.getPageSize()), purchaseReturnDTOList.size());
 

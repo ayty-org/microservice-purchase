@@ -17,8 +17,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ReturnAllPurchases {
     private final PurchaseRepository repository;
+    private final ReturnListBookOfFeign returnListBookOfFeign;
+    private final FeignGetBook feignGetBook;
+    private final FeignGetUserLibrary feignGetUserLibrary;
 
-    public List<PurchaseReturnDTO> findAllPurchase(FeignGetBook feignGetBook, FeignGetUserLibrary feignGetUserLibrary) {
+    public List<PurchaseReturnDTO> findAllPurchase() {
         List<PurchaseReturnDTO> purchaseReturnDTOS = new ArrayList<>();
         for(Purchase purchase: repository.findAll()){
             UserLibraryDTO userLibraryDTO = feignGetUserLibrary.findSpecificID(purchase.getSpecificIdUserLibrary());

@@ -13,11 +13,8 @@ import java.util.List;
 @Service
 public class ListPurchaseServiceImpl implements ListPurchaseService{
     private final ReturnAllPurchases returnAllPurchases;
-    private final FeignGetBook feignGetBook;
-    private final FeignGetUserLibrary feignGetUserLibrary;
-
     @Override
     public List<PurchaseReturnDTO> listAllPurchases() {
-        return returnAllPurchases.findAllPurchase(feignGetBook, feignGetUserLibrary);
+        return returnAllPurchases.findAllPurchase();
     }
 }

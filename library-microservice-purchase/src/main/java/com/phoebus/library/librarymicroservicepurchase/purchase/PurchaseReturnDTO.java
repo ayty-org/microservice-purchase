@@ -21,6 +21,8 @@ public class PurchaseReturnDTO implements Serializable {
 
     private UserLibraryDTO customer;
 
+    private String specificID;
+
     private List<BookDTO> shoppingList;
 
     private double priceToPay;
@@ -33,6 +35,7 @@ public class PurchaseReturnDTO implements Serializable {
                 .id(entity.getId())
                 .customer(customer)
                 .shoppingList(shoppingList)
+                .specificID(entity.getSpecificID())
                 .priceToPay(entity.getPriceToPay())
                 .purchaseCompleted(entity.isPurchaseCompleted())
                 .build();
